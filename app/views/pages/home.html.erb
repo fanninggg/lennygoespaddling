@@ -1,2 +1,177 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner-holder">
+  <div class="banner">
+    <div class="banner-text">
+      <h1 class="">Lenny Goes Paddling</h1>  
+      <p>Watching the recent events in Afghanistan is something that I think has impressed on everyone the scale of the humanitarian crisis unfolding there. It is my hope to raise as much money as possible to be donated to UNICEF’s Afghanistan emergency fund. To do this I will be attempting to kayak around as much of the UK coastline as possible over the next 70 days. I will be travelling solo, camping wild and trying to pick up as much plastic as I can along the way too. I am hoping to raise about £5 mile, so any donations would be greatly appreciated.</p>
+      <div class="actions-holder">
+        <a href="https://www.gofundme.com/f/lennygoespaddling/donate?member=13433973" class="donate-btn">Donate Now</a>
+        <div class="track-btn">Track Me</div>
+      </div>
+    </div>
+    <img src="https://i.imgur.com/Pprjl7r.jpg" alt="Lenny Kayaking" class="banner-img">
+  </div>
+</div>
+<iframe src="https://share.garmin.com/lennygoespaddling" frameborder="0" class="iframe" id="tracker"></iframe>
+
+<style>
+  .banner-holder {
+    background-image: url('https://cdn.britannica.com/28/114428-050-3536F368/niche-one-destruction-Buddhas-Bamiyan-Afghanistan-Taliban.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 10vh 0;
+  }
+
+  .banner {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 54px;
+    margin-bottom: 32px;
+    font-weight: bold;
+    color: #00122F;
+  }
+
+  .banner-text {
+    padding-right: 120px;
+    line-height: 26px;
+    color: #3E4550;
+  }
+
+  .donate-btn {
+    border-radius: 999px;
+    padding: 14px 48px;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(45deg, #314CD6, #172E92);
+    display: inline-block;
+    margin-top: 22px;
+  }
+
+  .track-btn {
+    border-radius: 999px;
+    padding: 14px 48px;
+    color: #172E92;
+    font-weight: bold;
+    border: 1px solid #172E92;
+    display: inline-block;
+    background: #fff;
+    margin-top: 22px;
+    margin-left: 22px;
+  }
+
+  .donate-btn:hover {
+    background: linear-gradient(45deg, #2E44B5, #1B2C75);
+  }
+
+  .track-btn:hover {
+    cursor: pointer;
+    background: #fafafa;
+    color: #1B2C75;
+  }
+
+  .banner-img {
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .iframe {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  @media (max-width: 1250px) {
+    .banner {
+      width: 90vw;
+    }
+    .banner-text {
+      padding-right: 80px;
+    }
+  }
+
+  @media (max-width: 1060px) {
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 26px;
+    }
+    .banner-text {
+      padding-right: 40px;
+    }
+  }
+
+  @media (max-width: 1010px) {
+    .donate-btn {
+      width: 100%;
+      text-align: center;
+    }
+    .track-btn {
+      width: 100%;
+      margin: 8px 0 0 0 ;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 940px) {
+    .banner-text {
+      /* font-size: 15px; */
+      /* line-height: 22px; */
+      padding-right: 22px;
+    }
+    .banner-img {
+      width: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .banner-holder {
+      padding: 5vh 0;
+      background-image: url('https://i.imgur.com/Pprjl7r.jpg');
+      height: auto
+    }
+    .banner {
+      height: auto;
+      min-height: 90vh;
+      padding: 26px;
+    }
+    h1 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 18px;
+    }
+    .banner-text {
+      padding-right: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+    p {
+      font-size: 14px;
+    }
+    .banner-img {
+      display: none;
+    }
+  }
+
+</style>
+
+<script>
+  document.querySelector('.track-btn').addEventListener('click', (e) => {
+    console.log('clicked');
+    location.hash = "#tracker";
+    e.preventDefault();
+    document.getElementById('tracker').scrollIntoView({
+        behavior: 'smooth'
+    });
+  })
+</script>
